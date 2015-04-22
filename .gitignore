@@ -16,3 +16,5 @@ Thumbs.db
 # Compiled Java files
 *.class
 
+# Jetbrains IDE-settings
+.idea/
