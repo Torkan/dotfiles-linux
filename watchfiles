@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Watch files/folders listed in the .watchlist file in current folder,
+# and run command in file .watcher when a change is detected.
+echo "Watching files/folder in .watchlist.."
+echo "Watcher command is: $(cat $PWD/.watcher)"
+while inotifywait -q -r -e create,delete,modify,move $(cat $PWD/.watchlist); do
+    $(cat $PWD/.watcher)
+done
