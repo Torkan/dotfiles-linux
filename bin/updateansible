@@ -1,0 +1,7 @@
+#!/bin/bash
+ansible_home () {
+  cd /home/tgk/src/ansible
+}
+ansible_home
+git pull --rebase
+git submodule update --init --recursive
