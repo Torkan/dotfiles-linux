@@ -1,0 +1,3 @@
+#!/bin/bash
+docker images -a -q | xargs docker kill
+docker ps -a -q | xargs docker rmi
