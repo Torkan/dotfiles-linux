@@ -25,11 +25,11 @@ export GREP_OPTIONS="--color=auto"
 export WORKON_HOME=$HOME/.virtualenvs¬
 
 # Load Virtualenv-wrapper if installed
-VENVWRAP="/bin/virtualenvwrapper.sh"¬
-if [ -f $VENVWRAP ];¬
-    then¬
-    source /bin/virtualenvwrapper.sh¬
-fi¬
+VENVWRAP="/bin/virtualenvwrapper.sh"
+if [ -f $VENVWRAP ];
+    then
+    source $VENVWRAP
+fi
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=false

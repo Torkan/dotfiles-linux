@@ -97,10 +97,10 @@ alias reload="exec $SHELL -l"
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
 
 # Run Django/Flask manage-script
-alias m="./manage"¬
-¬
+alias m="./manage"
+
 # Docker-Compose¬
-alias dc="docker-compose"¬
-alias dcr="docker-compose run --rm"¬
-alias dcs="docker-compose -f docker-compose-staging.yml"¬
+alias dc="docker-compose"
+alias dcr="docker-compose run --rm"
+alias dcs="docker-compose -f docker-compose-staging.yml"
 alias dcsr="docker-compose -f docker-compose-staging.yml run --rm"
