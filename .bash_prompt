@@ -15,13 +15,15 @@ if tput setaf 1 &> /dev/null; then
 		ORANGE=$(tput setaf 172)
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 0)
+		WHITE=$(tput setaf 7)
+		LIGHTBLUE=$(tput setaf 45)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
 		GREEN=$(tput setaf 2)
 		PURPLE=$(tput setaf 1)
 		WHITE=$(tput setaf 7)
+		LIGHTBLUE=$(tput setaf 45)
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
@@ -31,6 +33,7 @@ else
 	GREEN="\033[1;32m"
 	PURPLE="\033[1;35m"
 	WHITE="\033[1;37m"
+	LIGHTBLUE="\033[1;35m"
 	BOLD=""
 	RESET="\033[m"
 fi
@@ -42,6 +45,7 @@ export PURPLE
 export WHITE
 export BOLD
 export RESET
+export LIGHTBLUE
 
 function parse_git_dirty() {
 	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
@@ -51,5 +55,5 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1="\[$LIGHTBLUE\]\$(__docker_machine_ps1)\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"

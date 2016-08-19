@@ -31,3 +31,10 @@ done
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
+# Load Docker-Machine settings if installed
+[ -f /usr/local/bin/docker-machine ] && eval $(docker-machine env)
+
+# Load Virtualenvwrapper if installed
+# Load Virtualenv-wrapper if installed
+VENVWRAP="/bin/virtualenvwrapper.sh"
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
