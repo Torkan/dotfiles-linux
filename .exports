@@ -22,7 +22,7 @@ export MANPAGER="less -X"
 export GREP_OPTIONS="--color=auto"
 
 # Set folder for virtualenvs
-export WORKON_HOME=$HOME/.virtualenvs¬
+export WORKON_HOME=$HOME/.virtualenvs
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=false
